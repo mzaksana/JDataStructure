@@ -8,14 +8,12 @@ public class Main {
         ListHeadQuotes listHeadQuotes = new ListHeadQuotes();
         ReadFile readFile = new ReadFile("data/file.txt");
             for (String line:readFile.getLine()) {
-            String []parseLine = line.split("::");
-            ListQuotes listQuotes = new ListQuotes(new Quotes(parseLine[0]),listHeadQuotes.getHead());
-            listHeadQuotes.setHead(listQuotes);
-            //             System.out.println("line "+(a++)+" : "+line);
+                String []parseLine = line.split("::");
+                listHeadQuotes.add(new Quotes(parseLine[0]));
         }
 
         ListQuotes listQuotes1 = listHeadQuotes.getHead();
-        while (listQuotes1.hasNext()){
+        while (listQuotes1!=null){
             System.out.println(listQuotes1.getQuotes()+"\n");
             listQuotes1=listQuotes1.getNext();
         }
