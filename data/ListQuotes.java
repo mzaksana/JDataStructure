@@ -1,5 +1,10 @@
 package data;
-
+/**
+ * Kelas ListQuotes untuk list data yang menyimpan quotes dan index berikutnya
+ * * @author  Muammar Zikri Aksana
+ * * @version 1.0
+ * * @since   2019-Mar-20
+ */
 public class ListQuotes {
     private Quotes quotes;
     private ListQuotes next;

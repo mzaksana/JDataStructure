@@ -1,7 +1,7 @@
 package data;
 
 /**
- * Kelas Qoutes untuk menyimpan nama dan frequensi dari nama
+ * Kelas Qoutes untuk menyimpan nama dan frequensi dari nama-nama tokoh
  * * @author  Muammar Zikri Aksana
  * * @version 1.0
  * * @since   2019-Mar-20
@@ -20,8 +20,8 @@ public class Quotes {
 
     /**
      * Method ini digunakan untuk menambah jumlah frequensi +1
-     * @see this.setFreq();
-     * @see this.getFreq();
+     * @see  data.Quotes#setFreq(int) ;
+     * @see  data.Quotes#getFreq() ;
      */
     public void incFreq(){
         this.setFreq(this.getFreq()+1);
@@ -44,7 +44,7 @@ public class Quotes {
 
     /**
      * Method ini digunakan untuk menampilkan object dengan attribute name
-     * @see super.toString()
+     * @see java.util.Objects#toString(Object)
      */
     public String toString(){
         return this.name;
