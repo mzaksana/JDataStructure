@@ -67,21 +67,8 @@ public class QuotesList {
 	}
 
 	/**
-	 * 
-	 * @param quotes adalah objek yang namanya ingin dicari dalam list
-	 * @return true jika nama yang dicari tedapat dalam list else false
+	 * method untuk menampilkan semua isi list
 	 */
-	public boolean search(Quotes quotes) {
-		NodeList listQuotes1 = this.getHead();
-		while (listQuotes1 != null) {
-			if (listQuotes1.getQuotes().toString().compareToIgnoreCase(quotes.toString()) == 0) {
-				return true;
-			}
-			listQuotes1 = listQuotes1.getNext();
-		}
-		return false;
-	}
-
 	public void display() {
 		NodeList listQuotes1 = this.getHead();
 		while (listQuotes1 != null) {

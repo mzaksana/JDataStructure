@@ -15,9 +15,7 @@ public class Main {
 		for (String line : readFile.getLine()) {
 			String[] parseLine = line.split("::");
 			Quotes who = new Quotes(parseLine[0]);
-			if (!list.search(who)) {
-				list.add(who);
-			}
+			list.add(who);
 		}
 
 		list.display();
