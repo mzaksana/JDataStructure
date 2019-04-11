@@ -1,0 +1,10 @@
+{
+	"configurations": [{
+		"type": "java",
+		"name": "CodeLens (Launch) - Main",
+		"request": "launch",
+		"mainClass": "Main",
+		"projectName": "JDataStructure_c583db02",
+		"vmArgs": "--enable-preview"
+	}]
+}
