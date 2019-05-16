@@ -1,21 +1,19 @@
-import data.ListHeadQuotes;
-import data.ListQuotes;
 import data.Quotes;
-import file_reader.ReadFile;
+import data.bst.Bst;
+import data.bst.Node;
+import data.hash.Hash;
+
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
-        ListHeadQuotes listHeadQuotes = new ListHeadQuotes();
-        ReadFile readFile = new ReadFile("data/file.txt");
-            for (String line:readFile.getLine()) {
-                String []parseLine = line.split("::");
-                listHeadQuotes.add(new Quotes(parseLine[0]));
-        }
-
-        ListQuotes listQuotes1 = listHeadQuotes.getHead();
-        while (listQuotes1!=null){
-            System.out.println(listQuotes1.getQuotes()+"\n");
-            listQuotes1=listQuotes1.getNext();
-        }
+        Hash hash = new Hash();
+        Quotes data1 = new Quotes("saya");
+        Quotes data2 = new Quotes("lima");
+        Quotes data3 = new Quotes("adi");
+        hash.add(data1);
+        hash.add(data2);
+        hash.add(data3);
+        System.out.println("cari "+ data1.toString() +" di index "+ hash.cek(new Quotes("saya")));
     }
 }

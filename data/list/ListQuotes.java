@@ -1,4 +1,7 @@
-package data;
+package data.list;
+
+import data.Quotes;
+
 /**
  * Kelas ListQuotes untuk list data yang menyimpan quotes dan index berikutnya
  * * @author  Muammar Zikri Aksana
@@ -62,5 +65,4 @@ public class ListQuotes {
     private boolean hasNext(){
         return this.next!=null ;
     }
-
 }

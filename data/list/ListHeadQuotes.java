@@ -1,4 +1,6 @@
-package data;
+package data.list;
+
+import data.Quotes;
 
 /**
  * Kelas untuk head dari list
@@ -16,7 +18,7 @@ public class ListHeadQuotes {
      * Method untuk memindahkan/memberikan nilai untuk head
      * Setiap pemberian nilai pada head maka size data bertambah
      * @param head
-     * @see data.ListHeadQuotes#incSize()
+     * @see ListHeadQuotes#incSize()
      */
     public void setHead(ListQuotes head) {
         this.head = head;
@@ -24,8 +26,8 @@ public class ListHeadQuotes {
     }
     /**
      * Method ini digunakan untuk menambah jumlah frequensi +1
-     * @see data.ListHeadQuotes#setSize(int);
-     * @see data.ListHeadQuotes#getSize();
+     * @see ListHeadQuotes#setSize(int);
+     * @see ListHeadQuotes#getSize();
      */
     public void incSize(){
         this.setSize(this.getSize()+1);
@@ -57,10 +59,39 @@ public class ListHeadQuotes {
      * Method ini digunakan untuk menambah data kedalam list
      * @param quotes
      * @see ListQuotes
-     * @see data.ListHeadQuotes#setHead(ListQuotes)
-     * @see data.ListHeadQuotes#getHead()
+     * @see ListHeadQuotes#setHead(ListQuotes)
+     * @see ListHeadQuotes#getHead()
      */
     public void add(Quotes quotes){
         this.setHead(new ListQuotes(quotes,this.getHead()));
     }
+
+    public boolean search(Quotes a){
+        ListQuotes listQuotes1 = this.getHead();
+        while (listQuotes1 != null) {
+            if(listQuotes1.getQuotes().toString().compareToIgnoreCase(a.toString())==0){
+                return true;
+            }
+            listQuotes1 = listQuotes1.getNext();
+        }
+        return false;
+    }
+//public static void main(String[] args) {
+//        ListHeadQuotes listHeadQuotes = new ListHeadQuotes();
+//        ReadFile readFile = new ReadFile("data/file.txt");
+//        for (String line : readFile.getLine()) {
+//            String[] parseLine = line.split("::");
+//            Quotes who = new Quotes(parseLine[0]);
+//            if(!listHeadQuotes.search(who)){
+//                listHeadQuotes.add(who);
+//            }
+//        }
+//
+//        ListQuotes listQuotes1 = listHeadQuotes.getHead();
+//        while (listQuotes1 != null) {
+//            System.out.println(listQuotes1.getQuotes() + "\n");
+//            listQuotes1 = listQuotes1.getNext();
+//        }
+//        System.out.println(listHeadQuotes.getSize());
+//    }
 }
