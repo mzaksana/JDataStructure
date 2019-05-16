@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "configurations": [
         {
             "type": "java",
@@ -7,4 +8,14 @@
             "mainClass": "Main"
         }
     ]
+=======
+	"configurations": [{
+		"type": "java",
+		"name": "CodeLens (Launch) - Main",
+		"request": "launch",
+		"mainClass": "Main",
+		"projectName": "JDataStructure_c583db02",
+		"vmArgs": "--enable-preview"
+	}]
+>>>>>>> bd5ea8202c7aca4271c3412025a5a862b357731f
 }
