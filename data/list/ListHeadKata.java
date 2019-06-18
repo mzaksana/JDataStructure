@@ -1,7 +1,4 @@
 package data.list;
-
-import data.Quotes;
-
 /**
  * Kelas untuk head dari list
  * terdiri dari head dan size
@@ -10,24 +7,24 @@ import data.Quotes;
  * * @since   2019-Mar-20
  */
 
-public class ListHeadQuotes {
-    private ListQuotes head;
+public class ListHeadKata {
+    private ListKata head;
     private int size;
 
     /**
      * Method untuk memindahkan/memberikan nilai untuk head
      * Setiap pemberian nilai pada head maka size data bertambah
      * @param head
-     * @see ListHeadQuotes#incSize()
+     * @see ListHeadKata#incSize()
      */
-    public void setHead(ListQuotes head) {
+    public void setHead(ListKata head) {
         this.head = head;
         this.incSize();
     }
     /**
      * Method ini digunakan untuk menambah jumlah frequensi +1
-     * @see ListHeadQuotes#setSize(int);
-     * @see ListHeadQuotes#getSize();
+     * @see ListHeadKata#setSize(int);
+     * @see ListHeadKata#getSize();
      */
     public void incSize(){
         this.setSize(this.getSize()+1);
@@ -51,7 +48,7 @@ public class ListHeadQuotes {
     /**
      * Method ini digunakan untuk mendapat head dari list
      */
-    public ListQuotes getHead() {
+    public ListKata getHead() {
         return head;
     }
 
@@ -60,47 +57,17 @@ public class ListHeadQuotes {
      *
      * @param quotes
      * @see ListQuotes
-     * @see ListHeadQuotes#setHead(ListQuotes)
-     * @see ListHeadQuotes#getHead()
+     * @see ListHeadKata#setHead(ListKata)
+     * @see ListHeadKata#getHead()
      */
-    public void add(Quotes quotes,String kata) {
-        int index=this.search(quotes);
-        if (index != -1) {
-            this.update(index,kata);
-        } else {
-            this.setHead(new ListQuotes(quotes, this.getHead()));
-        }
-    }
-
-    public void update(int index,String kata){
-        ListQuotes listQuotes1 = this.getHead();
-        int temp=0;
-        while (temp++!=index) {
-            listQuotes1 = listQuotes1.getNext();
-        }
-        listQuotes1.getQuotes().incFreq();
-        listQuotes1.getQuotes().addKata(kata);
-//        listQuotes1.getQuotes().
-    }
-
-    public int search(Quotes a){
-        ListQuotes listQuotes1 = this.getHead();
-        int index=0;
-        while (listQuotes1 != null) {
-            if(listQuotes1.getQuotes().toString().compareToIgnoreCase(a.toString())==0){
-                return index;
-            }
-            listQuotes1 = listQuotes1.getNext();
-            index++;
-        }
-        return -1;
+    public void add(String quotes) {
+        this.setHead(new ListKata(quotes, this.getHead()));
     }
 
     public void display(){
-        ListQuotes listQuotes1 = this.getHead();
+        ListKata listQuotes1 = this.getHead();
         while (listQuotes1 != null) {
-            System.out.println(listQuotes1.getQuotes().toString() + " : " + listQuotes1.getQuotes().getFreq());
-            listQuotes1.getQuotes().getKata().display();
+            System.out.println("kata " +listQuotes1.getKata());
             listQuotes1 = listQuotes1.getNext();
         }
 

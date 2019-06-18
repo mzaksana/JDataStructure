@@ -1,19 +1,25 @@
 import data.Quotes;
-import data.bst.Bst;
-import data.bst.Node;
-import data.hash.Hash;
+import data.hash.HashTable;
+import file_reader.ReadFile;
 
-import java.util.Queue;
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        Hash hash = new Hash();
-        Quotes data1 = new Quotes("saya");
-        Quotes data2 = new Quotes("lima");
-        Quotes data3 = new Quotes("adi");
-        hash.add(data1);
-        hash.add(data2);
-        hash.add(data3);
-        System.out.println("cari "+ data1.toString() +" di index "+ hash.cek(new Quotes("saya")));
+        ReadFile readFile = new ReadFile("/home/mza/Documents/pro/StukturDataAlgoritma/data/file.txt");
+        Iterator iterator = readFile.getLine().iterator();
+        System.out.println("List elements : ");
+        HashTable hashTable = new HashTable(readFile.getLine().size());
+
+        while (iterator.hasNext()) {
+            String[] data = iterator.next().toString().split("::");
+            hashTable.add(new Quotes(data[0]),data[1]);
+        }
+
+
+//        hashTable.display(5);
+        hashTable.display(5);
     }
+
+
 }

@@ -7,7 +7,6 @@ public class Node {
     public Node kiri;
     public Node kanan;
 
-
     public void setData(Quotes data) {
         this.data = data;
     }
@@ -19,4 +18,5 @@ public class Node {
     public void setKanan(Node kanan) {
         this.kanan = kanan;
     }
+
 }
